@@ -10,7 +10,7 @@ const createDownloadProgress = ({
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
   }
 
-  cosnt transformBytes = (bytes, type) => {
+  const transformBytes = (bytes, type) => {
     const unit = {
       kb: 1e+3,
       mb: 1e+6,
