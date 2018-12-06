@@ -31,11 +31,10 @@ const createDownloadProgress = ({
     readline.clearLine(process.stdout, 1);
     downloaded += buffer.length
 
-    if( !complete ) {
-      process.stdout.write(chalk.blue(`${ message } ${ transformBytes(downloaded, unit) } / ${ transformBytes(length, unit) }${ unit }`))
-    } else {
-      process.stdout.write(chalk.green(complete + " " + transformBytes(length, unit) + "" + unit + "\n" ))
-    }
+    !complete 
+    ? process.stdout.write(chalk.blue(`${ message } ${ transformBytes(downloaded, unit) } / ${ transformBytes(length, unit) }${ unit }`))
+    : process.stdout.write(chalk.green(complete + " " + transformBytes(length, unit) + "" + unit + "\n" ))
+    
   }
 }
 
